@@ -27,7 +27,29 @@ public class Actividad0885
      */
     public String darleVueltaAPalabraAlternativamente (String nombre, int num)
     {
-        String palabra = "";
-        return palabra;
+        if (nombre == null) {
+            return null;
+        }
+        
+        if (nombre.isEmpty()) {
+            return "";
+        }
+        
+        StringBuilder resultado = new StringBuilder();
+        boolean invertido = true;
+        
+        for (int i = 0; i < num; i++) {
+            if (invertido) {
+                for (int j = nombre.length() - 1; j >= 0; j--) {
+                    resultado.append(nombre.charAt(j));
+                }                
+                invertido = false;
+            } else {
+                resultado.append(nombre);
+                invertido = true;
+            }
+        }
+        
+        return resultado.toString();
     }
 }
