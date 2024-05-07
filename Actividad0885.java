@@ -35,21 +35,20 @@ public class Actividad0885
             return "";
         }
         
-        StringBuilder resultado = new StringBuilder();
+        String resultado = "";
         boolean invertido = true;
-        
         for (int i = 0; i < num; i++) {
             if (invertido) {
                 for (int j = nombre.length() - 1; j >= 0; j--) {
-                    resultado.append(nombre.charAt(j));
-                }                
+                    resultado += nombre.charAt(j);
+                }
                 invertido = false;
             } else {
-                resultado.append(nombre);
+                resultado += nombre;
                 invertido = true;
             }
         }
         
-        return resultado.toString();
+        return resultado;
     }
 }
